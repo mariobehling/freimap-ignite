@@ -1,4 +1,4 @@
 freimap-ignite
 ==============
 
-Freimap Idea Web Service Prototype with Code Igniter Framework
+Freimap Idea Web Service Prototype with Yii Framework
