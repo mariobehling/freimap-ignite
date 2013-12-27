@@ -1,0 +1,288 @@
+body {
+    background-color: #689202;
+    background: -webkit-gradient(linear, left center, right center, from(#689202), to(#689202), color-stop(.5, #99c235));
+    background: -moz-linear-gradient(left, #689202 0%, #99c235 50%, #689202 100%);
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    text-shadow: 1px 1px 1px #435c07;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+#header {
+    position: relative;
+    background: #88bb08;
+    background-image: -moz-linear-gradient(top,
+        #bdde59 0%,
+        #b2d63b 49%,
+        #9dcb2e 51%,
+        #88bb08 100%);
+    background-image: -webkit-gradient(linear,left top,left bottom,
+        color-stop(0, 	#bdde59),
+        color-stop(.5, 	#b2d63b),
+        color-stop(.5, 	#9dcb2e),
+        color-stop(1, 	#88bb08));
+    -moz-box-shadow: 0 1px 6px rgba(0, 0, 0, .5);
+    -webkit-box-shadow: 0 1px 6px rgba(0, 0, 0, .5);
+    box-shadow: 0 1px 6px rgba(0, 0, 0, .5);
+    height: 44px;
+    width: 100%;
+    overflow: hidden;
+    z-index: 2;
+}
+
+#header-elements {
+    width: 320px;
+    height: 44px;
+    overflow: hidden;
+    margin: auto;
+    text-align: center;
+}
+
+#header-back-icon {
+    height: 44px;
+    width: 44px;
+    float: left;
+}
+
+.header-back-icon-on-released {
+    background: url(../../img/header-back-icon.png) center center no-repeat;
+    background-color: rgba(255,255,255,0);
+}
+
+.header-back-icon-on-pressed {
+    background: url(../../img/header-back-icon.png) center center no-repeat;
+    background-color: rgba(255,255,255,0.3);
+}
+
+#header-refresh-list-icon {
+    height: 44px;
+    width: 44px;
+    float: left;
+}
+
+.header-refresh-list-icon-on-released {
+    background: url(../../img/header-refresh-network-list-icon.png) center center no-repeat;
+    background-color: rgba(255,255,255,0);
+}
+
+.header-refresh-list-icon-on-pressed {
+    background: url(../../img/header-refresh-network-list-icon.png) center center no-repeat;
+    background-color: rgba(255,255,255,0.3);
+}
+
+.header-icons-divisor {
+    width: 2px;
+    height: 44px;
+    float: left;
+}
+
+.header-icons-divisor-dark {
+    width: 1px;
+    height: 44px;
+    background-color: #000000;
+    background: -webkit-gradient(linear, left top, left bottom,
+        from(rgba(0,0,0,0)),
+        to(rgba(0,0,0,0)),
+        color-stop(0.5, rgba(0,0,0,0.3)));
+    background: -moz-linear-gradient(center top,
+        rgba(0,0,0,0) 0%,
+        rgba(0,0,0,0.3) 50%,
+        rgba(0,0,0,0) 100%);
+    float: left;
+}
+
+.header-icons-divisor-light {
+    width: 1px;
+    height: 44px;
+    background-color: #FFFFFF;
+    background: -webkit-gradient(linear, left top, left bottom,
+        from(rgba(255,255,255,0)),
+        to(rgba(255,255,255,0)),
+        color-stop(0.5, rgba(255,255,255,0.5)));
+    background: -moz-linear-gradient(center top,
+        rgba(255,255,255,0) 0%,
+        rgba(255,255,255,0.5) 50%,
+        rgba(255,255,255,0) 100%);
+    float: left;
+}
+
+#network-title {
+    width: 228px;
+    height: 44px;
+    float: left;
+    text-align: center;
+    vertical-align: middle;
+    text-shadow: 0 -1px 1px rgba(0,0,0,0.4);
+    margin-top: 10px;
+    color: #FFFFFF;
+    white-space: nowrap;
+}
+
+.network-list-title-text {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#footer {
+    width: 100%;
+    height: 50px;
+}
+.footer-invisible {
+    display: none;
+}
+.footer-visible {
+    display: block;
+}
+
+#hardcode-banner-field {
+    width: 100%;
+    height: 50px;
+    position: absolute;
+}
+#hardcode-banner {
+    background: url(../../img/ads_meuchip.png) center center no-repeat;
+    width: 320px;
+    height: 50px;
+    margin: auto;
+    cursor: pointer;
+}
+.hardcode-banner-field-invisible {
+    display: none;
+}
+.hardcode-banner-field-visible {
+    display: block;
+}
+
+#main {
+    clear: both;
+}
+
+#main-network {
+    width: 320px;
+    overflow: hidden;
+    margin: 6px auto auto auto;
+}
+
+#network-background {
+    width: 320px;
+    overflow: hidden;
+}
+
+#network-list {
+    margin-top: 15px;
+    margin-left: 0;
+    font-size: 14pt;
+    color: white;
+}
+
+.network-list-loading-networks-text {
+    float: left;
+    margin-top: 13px;
+}
+
+.no-wifi {
+    background: url(../img/ico-wifi.png);
+    width: 45px;
+    height: 48px;
+    margin-left: 20px;
+    margin-right: 15px;
+    float: left;
+}
+
+.zg {
+    background: url(../img/zg.png);
+    width: 47px;
+    height: 35px;
+    margin-left: 5px;
+    margin-right: 8px;
+    float: left;
+    margin-top: 2px;
+}
+
+.not-zg {
+    background: url(../img/zg3.png);
+    width: 38px;
+    height: 37px;
+    margin-left: 10px;
+    margin-right: 11px;
+    float: left;
+    margin-top: 0;
+}
+
+.w0 {
+    background: url(../img/w0.png);
+    width: 30px;
+    height: 35px;
+    margin-left: 16px;
+    margin-right: 5px;
+    float: left;
+}
+
+.w1 {
+    background: url(../img/w1.png);
+    width: 30px;
+    height: 35px;
+    margin-left: 16px;
+    margin-right: 5px;
+    float: left;
+}
+
+.w2 {
+    background: url(../img/w2.png);
+    width: 30px;
+    height: 35px;
+    margin-left: 16px;
+    margin-right: 5px;
+    float: left;
+}
+
+.w3 {
+    background: url(../img/w3.png);
+    width: 30px;
+    height: 35px;
+    margin-left: 16px;
+    margin-right: 5px;
+    float: left;
+}
+
+.network-list-loading-networks {
+    padding-top: 9px;
+    padding-right: 20px;
+    white-space: normal;
+}
+
+.wifi-name {
+    padding-top: 9px;
+    padding-right: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 169px;
+}
+
+.separator {
+    clear: both;
+    background: url(../img/separator.png);
+    width: 310px;
+    height: 2px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
+.last-space {
+    margin-top: 12px;
+}
+
+.clear {
+    clear: both;
+}
+
+
+

@@ -1,0 +1,244 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta content='text/html; charset=UTF-8'/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>Zona Gr&aacute;tis Wi-Fi</title>
+
+    <link rel="stylesheet" href="css/main.css?v=254">
+    <link rel="stylesheet" href="./css/internalNote.css?v=254">
+    <link rel="stylesheet" href="./css/clickableButton.css?v=254">
+
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-touch-fullscreen" content="yes"/>
+
+    <link href="./img/icon57.png" type="image/png" rel="icon" sizes="57x57"/>
+    <link href="./img/icon57.png" type="image/png" rel="apple-touch-icon"/>
+    <link href="./img/icon129.png" type="image/png" rel="apple-touch-icon"/>
+    <link href="./img/icon129.png" type="image/png" rel="apple-touch-icon-precomposed"/>
+
+    <script charset="UTF-8" src="./js/dic.js?v=254"></script>
+    <script charset="UTF-8" src="./js/internalNote.js?v=254"></script>
+    <script charset="UTF-8" src="./js/clickableButton.js?v=254"></script>
+    <script charset="UTF-8" src="./js/sprite.js?v=254"></script>
+    <script charset="UTF-8" src="js/main.js?v=254"></script>
+    <script charset="UTF-8" src="./js/jquery-1.6.2.min.js?v=254"></script>
+    <script charset="UTF-8" src="./js/jquery-cookie.js?v=254"></script>
+    <script charset="UTF-8" src="./js/phonegap-1.2.0.js?v=254"></script>
+
+    <!--&lt;!&ndash;[if !IE 7]>-->
+	<!--<style type="text/css">-->
+		<!--#wrap {display:table;height:100%}-->
+	<!--</style>-->
+    <!--<![endif]&ndash;&gt;-->
+</head>
+
+<body>
+    <div id="header">
+        <div id="header-elements">
+            <div id="main-beta-logo-img" onclick="stats.generalClickTrack('main > logo');"></div>
+            <a href="javascript: {}">
+                <div id="header-help-icon" onclick="stats.generalClickTrack('main > help-button');" class="header-help-icon-on-released">
+                    <div class="header-icons-divisor">
+                        <div class="header-icons-divisor-dark"></div>
+                        <div class="header-icons-divisor-light"></div>
+                    </div>
+                </div>
+            </a>
+            <a href="javascript: {}">
+                <div id="header-share-icon" class="header-share-icon-off">
+                    <div class="header-icons-divisor">
+                        <div class="header-icons-divisor-dark"></div>
+                        <div class="header-icons-divisor-light"></div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div id="header-message">
+        <div id="header-message-elements">
+            <div id="network-status-icon" class="network-status-icon-searching network-status-icon-searching-frame0"></div>
+            <div id="network-status-info">
+                <span id="main-connected-info" class="main-connected-info-invisible">
+                    <span class="main-network-name-text">Conectado a:</span>&nbsp;
+                    <span id="network-name">Desconectado</span>
+                </span>
+                <span id="main-not-connected-info" class="main-not-connected-info-visible">
+                    <span id="network-status">Procurando redes...</span>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <div class="clear"></div>
+
+    <div id="main">
+        <div id="slideMessageBody">
+            <div id="slideMessageBodyTopPart"></div>
+            <div id="slideMessageBodyMiddlePart">
+                <div id="slideMessageIcon"></div>
+                <div id="slideMessageText"></div>
+            </div>
+            <div id="slideMessageBodyBottomPart"></div>
+        </div>
+
+        <div style="display: none;">
+            <div id="not-zg-notification-field" class="not-zg-notification-field-invisible">
+                <div id="main-not-zg-notification-title" class="main-not-zg-notification-title-text">
+                    Esta rede n&atilde;o &eacute; uma zona gr&aacute;tis.</div>
+                <!--<div id="main-notification-icon"></div>-->
+                <div id="main-not-zg-notification-message" class="main-not-zg-notification-message-text">
+                    Transforme-a numa zona gr&aacute;tis para que seus amigos tamb&eacute;m possam us&aacute;-la.</div>
+            </div>
+
+            <div id="zg-notification-field" class="zg-notification-field-invisible">
+                <div id="main-zg-notification-title" class="main-zg-notification-title-text">
+                    Navegue na Internet de gra&ccedil;a!!!</div>
+                <!--<div id="main-notification-icon"></div>-->
+                <div id="main-zg-notification-message" class="main-zg-notification-message-text">
+                    Voc&ecirc; est&aacute; conectado a uma zona gr&aacute;tis!</div>
+            </div>
+        </div>
+
+        <div class="clear"></div>
+
+        <div id="icon-field">
+            <a href="javascript: {}">
+                <div id="icon-map" onclick="stats.generalClickTrack('main > map-button');" class="icon-map-on-released">
+                    <div id="icon-map-img"></div>
+                    <div class="main-icon-map-text">Procurar zonas gr&aacute;tis no mapa</div>
+                </div>
+            </a>
+            <a href="javascript: void(0) ">
+                <div id="icon-network" onclick="stats.generalClickTrack('main > network-button');" class="icon-network-on-released">
+                    <div id="icon-network-img"></div>
+                    <div class="main-icon-network-text">Ver redes wi-fi pr&oacute;ximas</div>
+                </div>
+            </a>
+        </div>
+
+        <div class="clear"></div>
+
+        <div id="internet-button-field">
+            <a href="javascript: {}">
+                <div id="internet-button" onclick="stats.generalClickTrack('main > internet-button');" class="internet-button-on-released">
+                    <img src="img/internet-button-icon.png" align="absmiddle">
+                    <span class="main-internet-button-text">Navegar na Internet</span>
+                </div>
+            </a>
+        </div>
+
+        <div id="share-network-button-field" class="share-network-button-field-invisible">
+            <a href="javascript: {}">
+                <div id="share-network-button" onclick="stats.generalClickTrack('main > share-password-button');" class="share-network-button-on-released">
+                    <img src="img/share-network-button-icon.png" align="absmiddle">
+                    <span class="main-share-network-button-text">Socializar rede</span>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div id="footer" class="footer-invisible"></div>
+    <div id="hardcode-banner-field" class="hardcode-banner-field-invisible">
+        <div id="hardcode-banner" onclick="util.callOnAndroid(
+                    function() { window.android.doActionOnAndroid('hardcodeBannerClickEvent', '', false); },
+                    function() { window.location.href = 'https://market.android.com/details?id=mobi.mychip&feature=search_result' });">
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            internalNotification.init('./img/');
+
+            //Sprites
+            networkState.init('network-status-icon');
+            networkState.stop('network-status-icon-searching network-status-icon-searching-frame0');
+
+            //Buttons
+            mainGoToInternetButton.initId('internet-button');
+            mainGoToInternetButton.setClickFunction(new function ButtonClickExecution() {
+                ButtonClickExecution.prototype.execute = function() {
+                    util.callOnAndroid(function() { window.android.doActionOnAndroid('internetClickEvent', '', false); },
+                                       function() { window.location.href = './portal/portal.html' });
+                };
+            });
+
+            mainShareNetworkButton.initId('share-network-button');
+            mainShareNetworkButton.setClickFunction(new function ButtonClickExecution() {
+                ButtonClickExecution.prototype.execute = function() {
+                    util.callOnAndroid(function() { window.android.doActionOnAndroid('networkQuickShare', '', false); });
+                };
+            });
+
+            mainNetworksButton.initId('icon-network');
+            mainNetworksButton.setClickFunction(new function ButtonClickExecution() {
+                ButtonClickExecution.prototype.execute = function() {
+                    util.callOnAndroid(function() { window.android.doActionOnAndroid('networkClickEvent', '', true); });		     
+                };
+            });
+
+            mainMapButton.initId('icon-map');
+            mainMapButton.setClickFunction(new function ButtonClickExecution() {
+                ButtonClickExecution.prototype.execute = function() {
+                    util.callOnAndroid(function() { window.android.doActionOnAndroid('mapClickEvent', '', true); },
+                                       function() { window.location.href = './mapweb/map.html' });		     
+                };
+            });
+
+            mainHelpButton.initId('header-help-icon');
+            mainHelpButton.setClickFunction(new function ButtonClickExecution() {
+                ButtonClickExecution.prototype.execute = function() {
+                    util.callOnAndroid(function() { window.android.doActionOnAndroid('helpClickEvent', '', true); },
+                                       function() { window.location.href = './help/help.html'; });
+                };
+            });
+
+            mainShareZgSuccessConnectionOnFacebookButton.initId('header-share-icon');
+            mainShareZgSuccessConnectionOnFacebookButton.setClickFunction(new function ButtonClickExecution() {
+                ButtonClickExecution.prototype.execute = function() {
+                    util.callOnAndroid(function() { window.android.doActionOnAndroid('shareZgSuccesssConnectionOnFacebookClickEvent', '', true); });
+                };
+            });
+
+            zgMain();
+
+            if (!androidModeOn) {
+                $('#network-status-info').html(dic[language]['main-download-market']);
+                $('#network-status-icon').removeClass();
+                $('#network-status-icon').addClass('network-status-icon-market');
+                $('#header-message').click(function() {
+                    stats.generalClickTrack('main > main-download-market');
+                    window.setTimeout(function() {
+                        window.location.href = 'http://market.android.com/details?id=net.alouw.alouwCheckin&referrer=utm_source%3Dhtml5%26utm_medium%3Dweb%26utm_campaign%3Dfrom_web';
+                    }, 300);
+                });
+            }
+
+            setTimeout(function() {
+                window.scrollTo(0, 1);
+            }, 500);
+
+            // Hardcode Banner HACK!
+            var mainWindowHeight = $(window).height();
+            function setHarcodeBannerTop() {
+                var hardcodeBanner = document.getElementById("hardcode-banner-field");
+                hardcodeBanner.style.top = (mainWindowHeight - hardcodeBanner.clientHeight + document.body.scrollTop) + "px";
+            }
+            setHarcodeBannerTop();
+            window.onscroll = function () {
+                setHarcodeBannerTop();
+            };
+            window.onresize = function () {
+                mainWindowHeight = $(window).height();
+                setHarcodeBannerTop();
+            };
+        });
+    </script>
+    <!-- Note: Do not put Analytics in the off-line version -->
+
+</body>
+
+</html>

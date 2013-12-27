@@ -1,0 +1,2 @@
+/*Danny - ADDED - Remove the Orange/Green default border when you click in a <div>*/
+* {-webkit-tap-highlight-color: rgba(0, 0, 0, 0);}

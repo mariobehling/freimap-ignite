@@ -1,0 +1,6 @@
+2011/12/16 10:51:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "Gii".' in /opt/project/mbm/freimap/webserver/yii/framework/web/CWebApplication.php:281
+Stack trace:
+#0 /opt/project/mbm/freimap/webserver/yii/framework/web/CWebApplication.php(136): CWebApplication->runController('Gii')
+#1 /opt/project/mbm/freimap/webserver/yii/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#2 /opt/project/mbm/freimap/webserver/mbmfreimap/index.php(13): CApplication->run()
+#3 {main} REQUEST_URI=/mbmfreimap/Gii

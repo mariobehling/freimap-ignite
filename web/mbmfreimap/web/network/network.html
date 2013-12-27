@@ -1,0 +1,133 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta content='text/html; charset=UTF-8'/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>Lista de Redes</title>
+
+    <link rel="stylesheet" href="./css/network.css?v=254">
+    <link rel="stylesheet" href="../css/internalNote.css?v=254">
+    <link rel="stylesheet" href="../css/clickableButton.css?v=254">
+
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-touch-fullscreen" content="yes"/>
+
+    <script charset="UTF-8" src="../js/dic.js?v=254"></script>
+    <script charset="UTF-8" src="../js/internalNote.js?v=254"></script>
+    <script charset="UTF-8" src="../js/clickableButton.js?v=254"></script>
+    <script charset="UTF-8" src="../js/main.js?v=254"></script>
+    <script charset="UTF-8" src="./js/network.js?v=254"></script>
+    <script charset="UTF-8" src="../js/jquery-1.6.2.min.js?v=254"></script>
+
+</head>
+
+<body>
+<header>
+    <div id="header">
+        <div id="header-elements">
+            <a href="javascript: {}">
+                <div id="header-back-icon" onclick="stats.generalClickTrack('network-list > back-button');"
+                     class="header-back-icon-on-released"></div>
+            </a>
+            <div class="header-icons-divisor">
+                <div class="header-icons-divisor-dark"></div>
+                <div class="header-icons-divisor-light"></div>
+            </div>
+            <div id="network-title">
+                    <span class="network-list-title-text">Redes Disponíveis</span>
+            </div>
+            <div class="header-icons-divisor">
+                <div class="header-icons-divisor-dark"></div>
+                <div class="header-icons-divisor-light"></div>
+            </div>
+            <a href="javascript: {}">
+                <div id="header-refresh-list-icon" onclick="stats.generalClickTrack('network-list > refresh-list-button');"
+                     class="header-refresh-list-icon-on-released"></div>
+            </a>
+        </div>
+    </div>
+</header>
+
+<div id="main">
+    <div id="slideMessageBody">
+        <div id="slideMessageBodyTopPart"></div>
+        <div id="slideMessageBodyMiddlePart">
+            <div id="slideMessageIcon"></div>
+            <div id="slideMessageText"></div>
+        </div>
+        <div id="slideMessageBodyBottomPart"></div>
+    </div>
+</div>
+
+<div id="main-network">
+    <div id="network-background">
+        <div id="network-list">
+            <div onclick="stats.generalClickTrack('network-list > loading');">
+                <div class="no-wifi"></div>
+                <div>
+                    <span class="network-list-loading-networks-text">Carregando...</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="footer" class="footer-invisible"></div>
+<div id="hardcode-banner-field" class="hardcode-banner-field-invisible">
+    <div id="hardcode-banner" onclick="util.callOnAndroid(
+                function() { window.android.doActionOnAndroid('hardcodeBannerClickEvent', '', false); },
+                function() { window.location.href = 'https://market.android.com/details?id=mobi.mychip&feature=search_result' });">
+    </div>
+</div>
+
+<!-- Note: Do not put Analytics in the off-line version -->
+
+<script>
+    $(document).ready(function() {
+        internalNotification.init('../img/');
+
+        //Buttons
+        networkBackButton.initId('header-back-icon');
+        networkBackButton.setClickFunction(new function ButtonClickExecution() {
+            ButtonClickExecution.prototype.execute = function() {
+                util.callOnAndroid(function() { window.android.doActionOnAndroid('goBackToPortal', '', false); },
+                                   function() { window.location.href = '../'; });
+            };
+        });
+
+        networkRefreshListButton.initId('header-refresh-list-icon');
+        networkRefreshListButton.setClickFunction(new function ButtonClickExecution() {
+            ButtonClickExecution.prototype.execute = function() {
+                util.callOnAndroid(function() { window.android.doActionOnAndroid('refreshNetworkList', '', false); });
+            };
+        });
+
+        zgMain();
+
+        setTimeout(function() {
+            window.scrollTo(0, 1);
+        }, 500);
+
+        // Hardcode Banner HACK!
+        var networkWindowHeight = $(window).height();
+        function setHarcodeBannerTop() {
+            var hardcodeBanner = document.getElementById("hardcode-banner-field");
+            hardcodeBanner.style.top = (networkWindowHeight - hardcodeBanner.clientHeight + document.body.scrollTop) + "px";
+        }
+        setHarcodeBannerTop();
+        window.onscroll = function () {
+            setHarcodeBannerTop();
+        };
+        window.onresize = function () {
+            networkWindowHeight = $(window).height();
+            setHarcodeBannerTop();
+        };
+    });
+</script>
+
+</body>
+
+</html>

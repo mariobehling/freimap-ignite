@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta content='text/html; charset=UTF-8'/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>Zona Grátis</title>
+
+    <link rel="stylesheet" type="text/css" href="./css/map.css?v=254">
+    <link rel="stylesheet" href="../css/clickableButton.css?v=254">
+
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-touch-fullscreen" content="yes"/>
+
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-touch-fullscreen" content="yes"/>
+
+    <link href="../img/icon57.png" type="image/png" rel="icon" sizes="57x57"/>
+    <link href="../img/icon57.png" type="image/png" rel="apple-touch-icon"/>
+    <link href="../img/icon129.png" type="image/png" rel="apple-touch-icon"/>
+    <link href="../img/icon129.png" type="image/png" rel="apple-touch-icon-precomposed"/>
+
+    <script charset="UTF-8" src="../js/dic.js?v=254"></script>
+    <script charset="UTF-8" src="../js/clickableButton.js?v=254"></script>
+    <script charset="UTF-8" src="../js/main.js?v=254"></script>
+    <script src="../js/jquery-1.6.2.min.js?v=254"></script>
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true&libraries=places"></script>
+    <script src="./js/zginfowindow.js?v=254"></script>
+    <script src="./js/markerclusterer.js?v=254"></script>
+    <script src="./js/map.js?v=254"></script>
+
+</head>
+<body>
+
+<div id="page">
+    <div id="header">
+        <div id="map-beta-logo-img" onclick="stats.generalClickTrack('map > logo');" class="map-beta-logo-img-on-released"></div>
+        <div id="map-current-location-icon" class="map-current-location-icon-on-released"></div>
+        <input id="searchTextField" type="text" onclick="thatMap.gotFocusSearch();"
+               onfocus="stats.generalClickTrack('map > search');"/>
+    </div><!-- /header -->
+
+    <div id="zginfowindow" style="display: none">
+        <div id="zginfowindow-bg">
+            <div id="zginfowindow-content"></div>
+        </div>
+        <div id="zginfowindow-content-arrow"></div>
+    </div>
+
+    <div onselectstart="return false;" ondragstart="return false;" id="bigcloud">
+        <div id="bigcloud-content"></div>
+    </div>
+
+    <div onselectstart="return false;" ondragstart="return false;" id="popup-no-network-nearby">
+        <div id="popup-no-network-content"></div>
+    </div>
+
+    <div id="map-title">
+        <div id="map_canvas"></div>
+    </div>
+</div><!-- /page -->
+
+<script>
+    $(document).ready(function() {
+        //Buttons
+        mapCurrentLocationButton.initId('map-current-location-icon');
+        mapCurrentLocationButton.setClickFunction(new function ButtonClickExecution() {
+            ButtonClickExecution.prototype.execute = function() {
+                goToUserPosition(true);
+                stats.generalClickTrack('map > current-location-button');
+            };
+        });
+
+        mapLogoButton.initId('map-beta-logo-img');
+        mapLogoButton.setClickFunction(new function ButtonClickExecution() {
+            ButtonClickExecution.prototype.execute = function() {
+                util.callOnAndroid(function() { window.android.doActionOnAndroid('goToMain', '', false); },
+                                   function() { window.location.href = '../'; });
+            };
+        });
+
+        zgMain();
+    });
+</script>
+
+</body>
+
+</html>
